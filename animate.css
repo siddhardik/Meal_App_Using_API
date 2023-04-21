@@ -13,9 +13,7 @@
       }
 
  
-    50% {
-      transform: scale(1.1, 1.1);
-    }
+    
 
     70%{
         transform: scale(0.8, 0.8);

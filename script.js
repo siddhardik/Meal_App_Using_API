@@ -1,8 +1,4 @@
 
-// const searchBtn = document.querySelector(".searchbutton");
-// const heading2 = document.getElementById('heading2')
-
-// const input = document.querySelector("#search");
 
 
 
@@ -13,6 +9,7 @@ if (localStorage.getItem("favouritesList") == null) {
 }
 
 
+const url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 // it fetches meals from api and return it
 async function fetchMealsFromApi(url, value) {
@@ -24,9 +21,9 @@ async function fetchMealsFromApi(url, value) {
 //displays the searched meal
 
 function showMealList() {
-    let inputValue = document.getElementById("search").value.trim();
+    let inputValue = document.getElementById("search_query").value.trim();
     let arr = JSON.parse(localStorage.getItem("favouritesList"));
-    let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
+    
     let html = "";
     let meals = fetchMealsFromApi(url, inputValue);
     meals.then(data => {
@@ -42,12 +39,12 @@ function showMealList() {
                 }
                 if (isFav) {
                     html += `
-                <div id="card" class="card mb-3" style="width: 20rem;">
+                <div id="card" class="card mb-3 bg-white" style="width: 20rem;">
                     <img src="${element.strMealThumb}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title ">${element.strMeal}</h5>
+                        <h5 class="card-title text-info info">${element.strMeal}</h5>
                         <div class="d-flex justify-content-between mt-5">
-                            <button type="button" class="btn btn-warning" onclick="showMealDetails(${element.idMeal})">Recipe</button>
+                            <button type="button" class="btn btn-success" onclick="showMealDetails(${element.idMeal})">Details</button>
                             <button id="main${element.idMeal}" class="btn btn-outline-light active" onclick="addRemoveToFavList(${element.idMeal})" style="border-radius:50%"><i class="fa-solid fa-heart"></i></button>
                         </div>
                     </div>
@@ -55,15 +52,15 @@ function showMealList() {
                 `;
                 } else {
                     html += `
-                <div id="card" class="card mb-3" style="width: 20rem;">
+                <div id="card" class="card mb-3 bg-white" style="width: 20rem;">
                     <img src="${element.strMealThumb}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">${element.strMeal}</h5>
+                        <h5 class="card-title text-info">${element.strMeal}</h5>
                         <div class="d-flex justify-content-between mt-5">
-                            <button type="button" class="btn btn-warning" onclick="showMealDetails(${element.idMeal})">Recipe</button>
+                            <button type="button" class="btn btn-success" onclick="showMealDetails(${element.idMeal})">Details</button>
                             <button id="main${element.idMeal}" class="btn btn-outline-light bg-sucess" onclick="addRemoveToFavList(${element.idMeal})" style="border-radius:50%"><i class="fa-solid fa-heart"></i></button>
                         </div>
-                    </div>
+                    </div> 
                 </div>
                 `;
                 }  
@@ -106,7 +103,7 @@ async function showMealDetails(id) {
                     <div id="heading" class="text-center">
 
                     </div>
-                    <h2 class="card-title" id="heading2">${data.meals[0].strMeal}</h2>
+                    <h2 class="card-title text-info" id="heading2">${data.meals[0].strMeal}</h2>
                     <p id="category">Category : ${data.meals[0].strCategory}</p>
                     <p d="area">Area : ${data.meals[0].strArea}</p>
 
@@ -114,7 +111,7 @@ async function showMealDetails(id) {
                     <h5>Instruction :</h5>
                     <p class="card-text" id="recipe-intro">
                         ${data.meals[0].strInstructions}</p>
-                    <a href="${data.meals[0].strYoutube}"  target="_blank" class="btn btn-warning">Video</a>
+                    <a href="${data.meals[0].strYoutube}"  target="_blank" class="btn btn-success">Video</a>
 
                     
                 </div>
@@ -159,9 +156,9 @@ async function showFavMealList() {
                 <div id="card" class="card mb-3 m-2" style="width: 20rem;">
                     <img src="${data.meals[0].strMealThumb}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">${data.meals[0].strMeal}</h5>
+                        <h5 class="card-title text-info">${data.meals[0].strMeal}</h5>
                         <div class="d-flex justify-content-between mt-5">
-                            <button type="button" class="btn btn-warning" onclick="showFavMealDetails(${data.meals[0].idMeal})">Recipe</button>
+                            <button type="button" class="btn btn-success" onclick="showFavMealDetails(${data.meals[0].idMeal})">Details</button>
                             <button id="main${data.meals[0].idMeal}" class="btn btn-outline-light" onclick="addRemoveToFavList(${data.meals[0].idMeal})" style="border-radius:50%"><i class="fa fa-trash" aria-hidden="true"></i>
                             </button>
                         </div>
@@ -181,7 +178,7 @@ async function showFavMealDetails(id) {
     await fetchMealsFromApi(url, id).then(data => {
         html += `
           
-    <div class="container py-3">
+    <div class="container meal_detail py-3">
     <div class="card card p-lg-5 p-md-2">
         <div class="row ">
             <div class="col-md-4  align-self-center">
@@ -192,15 +189,15 @@ async function showFavMealDetails(id) {
                     <div id="heading" class="text-center">
 
                     </div>
-                    <h2 class="card-title" id="heading2">${data.meals[0].strMeal}</h2>
-                    <p id="category">Category : ${data.meals[0].strCategory}</p>
-                    <p d="area">Area : ${data.meals[0].strArea}</p>
+                    <h2 class="card-title meal_detail_text  text-info" id="heading2">${data.meals[0].strMeal}</h2>
+                    <p id="category" class="meal_detail_text" >Category : ${data.meals[0].strCategory}</p>
+                    <p id="area" class="meal_detail_text">Area : ${data.meals[0].strArea}</p>
 
 
                     <h5>Instruction :</h5>
-                    <p class="card-text" id="recipe-intro">
+                    <p class="card-text meal_detail_text" id="recipe-intro">
                         ${data.meals[0].strInstructions}</p>
-                    <a href="${data.meals[0].strYoutube}"  target="_blank" class="btn btn-warning">Video</a>
+                    <a href="${data.meals[0].strYoutube}"  target="_blank" class="btn btn-success">Video</a>
                 </div>
             </div>
 

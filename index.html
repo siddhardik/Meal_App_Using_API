@@ -17,28 +17,32 @@
 </head>
 
 <body>
-  <!--navbar-->
-  <nav class="navbar d-flex">
-    <div class="container logo">
-      <a class="navbar-brand" href="index.html">
-        <img src="img/meal_app_logo.png" alt="Bootstrap" width="90" height="90">
-      </a>
-      
-      <a class="nav-link heading" id="fav" href="favorite.html" onclick="showFavMealList()">Favorites</a>
-      
+   <!-- NavBar  -->
+   <nav class="border">
+    <div class="web_logo border">
+        <a href="index.html">
+            <img src="img/meal_app_logo.jpg" alt="Meal_App_Logo">
+        </a>
+        
+    </div>
+    <div class="slogan"> <h5 > First Learn</h5>
+    <h5>Cook ! Eat</h5> </div>
+    
+    
+    <div class="fav_list" ><a href="favourite.html" onclick="showFavMealList()"" >Favourites</a></div>
 
-  </nav>
+</nav>
 
 
-  <!--Input section whre serach is done-->>
-  <div class="container text-center mt-5">
 
-    <input type="text" id="search" class="searchbox" placeholder="Search.." onkeyup="showMealList()" />
-    <button type="submit" class="searchbutton"> -->
-      <i class="fa fa-search"></i>
-    </button>
 
-  </div>
+
+ 
+  <!-- ====Search Box =====  -->
+  <div class="search_box centre_box border">
+    <!-- <i class="search_icon fa-solid fa-magnifying-glass fa-beat-fade"></i> -->
+    <input type="text" id="search_query" placeholder=" 🔍 Search Meal/Food" class ="border" onkeyup="showMealList()" >
+     </div>
 
 
 
