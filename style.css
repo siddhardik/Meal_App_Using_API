@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@300&display=swap');
+
+
+* {
+  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #d4d2e2;
+}
+
+.navbar {
+    background-color: #000000;
+}
+.logo{
+    border-radius: 50%;
+}
+
+#fav {
+    color:greenyellow;
+    animation: zoom-in-zoom-out 3s ease-in-out infinite;
+}
+
+
+
+.navbar-brand{
+    border-radius: 50%;
+    animation: zoom-in-zoom-out 3s ease-in-out infinite;
+}
+
+img{
+    border-radius: 6px;
+}
+
+.searchbox {
+    margin: 0;
+    width: 40%;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    padding: .8rem 2rem .8rem 1rem;
+    outline: none;
+    border: none;
+    background-color: #23212E;
+    color: rgb(214, 91, 91);
+}
+
+.searchbutton {
+    text-align: center;
+    outline: none;
+    border: none;
+    background-color: #23212E;
+    margin: 0;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: .8rem 1rem;
+    margin-left: -1.9%;
+}
+
+i {
+    color: #975202;
+}
+
+/* .image-info{
+    height: 40%
+}
+
+.image-info img{
+    height: 100%;
+} */
+
+.recipe-list {
+    margin: auto;
+}
+
+.card {
+    background-color: #23212E;
+    border-radius: 20px;
+    color: #CFCECE
+}
+
+.btn-warning {
+    background: rgb(241, 161, 49);
+    background: linear-gradient(90deg, rgba(241, 161, 49, 1) 1%, rgba(244, 149, 44, 1) 30%, rgba(250, 197, 63, 1) 66%);
+    border-radius: 20px;
+    padding: 0.4rem 2rem;
+    color: white!important;
+}
+.white{
+    color: white;
+}
+.food-wid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#heading2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 3rem;
+    background: rgb(241, 161, 49);
+    background: linear-gradient(90deg, rgba(241, 161, 49, 1) 1%, rgba(244, 149, 44, 1) 30%, rgba(250, 197, 63, 1) 66%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.heading{
+    font-family: 'Anton', sans-serif;
+}
+
+#recipe-intro{
+    font-weight: lighter!important;
+    word-spacing: 0.3rem;
+    
+}
+
+
