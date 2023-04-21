@@ -1,27 +1,7 @@
-# Meal App
+It is a Food/Meal Recipes Web - Application.
 
-Utilizing HTML, CSS, and Javascript, this website is straightforward. The user-specified data is served to them by this, which obtains its recipe from an api. The design's goal is served and the end result is achieved effectively by its understated elegance.
+Using technology #HTML #CSS #JAVASCRIPT #BOOTSTRAP
 
+Use API => "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
 
-### This website does the following task
-```
-* Discover recipes 🍙
-* Get Recipe instructions 🥧
-* Get videos 🎬
-* Add to Favorites ❣️
-* Remove from Favorites ❌
-```
-<hr>
-
-### Cloning the project:
-
-`git clone https://github.com/Salonee-Jain/MealApp.git`
-- Or can just downlaod the zip file
-
-<hr>
-
-### Preview of the project:
-[MealApp](https://salonee-jain.github.io/MealApp/)
-
-<hr>
-
+Hoisted Link : https://siddhardik.github.io/Meal_App_Ninja_Test/ 

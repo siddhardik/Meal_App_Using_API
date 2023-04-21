@@ -103,13 +103,13 @@ async function showMealDetails(id) {
                     <div id="heading" class="text-center">
 
                     </div>
-                    <h2 class="card-title text-info" id="heading2">${data.meals[0].strMeal}</h2>
-                    <p id="category">Category : ${data.meals[0].strCategory}</p>
-                    <p d="area">Area : ${data.meals[0].strArea}</p>
+                    <h2 class="card-title text-info " id="heading2">${data.meals[0].strMeal}</h2>
+                    <p id="category" class="text-dark">Category : ${data.meals[0].strCategory}</p>
+                    <p id="area" class="text-primary"]>Area : ${data.meals[0].strArea}</p>
 
 
                     <h5>Instruction :</h5>
-                    <p class="card-text" id="recipe-intro">
+                    <p class="card-text text-success" id="recipe-intro">
                         ${data.meals[0].strInstructions}</p>
                     <a href="${data.meals[0].strYoutube}"  target="_blank" class="btn btn-success">Video</a>
 
@@ -189,13 +189,13 @@ async function showFavMealDetails(id) {
                     <div id="heading" class="text-center">
 
                     </div>
-                    <h2 class="card-title meal_detail_text  text-info" id="heading2">${data.meals[0].strMeal}</h2>
-                    <p id="category" class="meal_detail_text" >Category : ${data.meals[0].strCategory}</p>
-                    <p id="area" class="meal_detail_text">Area : ${data.meals[0].strArea}</p>
+                    <h2 class="card-title   text-info" id="heading2">${data.meals[0].strMeal}</h2>
+                    <p id="category" class="text-danger" >Category : ${data.meals[0].strCategory}</p>
+                    <p id="area" class="text-primary">Area : ${data.meals[0].strArea}</p>
 
 
                     <h5>Instruction :</h5>
-                    <p class="card-text meal_detail_text" id="recipe-intro">
+                    <p class="card-text text-info" id="recipe-intro">
                         ${data.meals[0].strInstructions}</p>
                     <a href="${data.meals[0].strYoutube}"  target="_blank" class="btn btn-success">Video</a>
                 </div>
@@ -225,10 +225,10 @@ function addRemoveToFavList(id) {
     if (contain) {
         let number = arr.indexOf(id);
         arr.splice(number, 1);
-        alert("your meal removed from your favourites list");
+        alert("Your meal will be removed from your favourites list 😭");
     } else {
         arr.push(id);
-        alert("your meal add your favourites list");
+        alert("Your meal  has been added to your favourites list 🎮😃");
     }
     localStorage.setItem("favouritesList",JSON.stringify(arr));
     
