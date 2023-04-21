@@ -218,11 +218,17 @@ input::placeholder {
     color:var(--bgc);
 }
 
-
-
-.meal_detail_text {
-    color: black !important;
+#copy_right{
+    text-align: center;
 }
+
+
+
+
+
+
+
+
 
 
 
